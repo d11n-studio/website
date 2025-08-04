@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
+import Icon from '../components/Icon.astro';
+
+const benefits = [
+  {
+    title: "Agilité Startup",
+    description: "Une équipe dédiée qui agit comme une extension agile de votre organisation.",
+    icon: "rocket"
+  },
+  {
+    title: "Time-to-Market Record",
+    description: "Des pilotes fonctionnels en 12 semaines, pas en 12 mois.",
+    icon: "clock"
+  },
+  {
+    title: "Expertise IA de Pointe",
+    description: "Les dernières avancées en IA appliquées à vos défis business.",
+    icon: "chip"
+  },
+  {
+    title: "ROI Mesurable",
+    description: "Des métriques claires et un impact business quantifiable.",
+    icon: "chart"
+  },
+  {
+    title: "Innovation Sans Risque",
+    description: "Testez de nouvelles idées sans mobiliser vos ressources internes.",
+    icon: "shield"
+  },
+  {
+    title: "Transfer de Compétences",
+    description: "Vos équipes montent en compétence sur les nouvelles technologies.",
+    icon: "academic-cap"
+  }
+];
+
+const useCases = [
+  {
+    title: "Nouveau Produit Digital",
+    description: "Lancez une nouvelle offre digitale pour conquérir de nouveaux segments.",
+    examples: ["App mobile", "Plateforme SaaS", "Marketplace"]
+  },
+  {
+    title: "Automatisation IA",
+    description: "Optimisez vos processus avec l'intelligence artificielle.",
+    examples: ["Service client", "Analyse de données", "Génération de contenu"]
+  },
+  {
+    title: "Innovation Business Model",
+    description: "Explorez de nouveaux modèles économiques sans cannibaliser l'existant.",
+    examples: ["Subscription", "Usage-based", "Freemium"]
+  },
+  {
+    title: "Transformation Digitale",
+    description: "Modernisez vos outils et processus pour gagner en efficacité.",
+    examples: ["CRM moderne", "Analytics temps réel", "Workflows automatisés"]
+  }
+];
+
+const approach = [
+  {
+    step: "1",
+    title: "Brief & Cadrage",
+    description: "Nous analysons votre défi et définissons ensemble les objectifs et KPIs.",
+    duration: "1 semaine"
+  },
+  {
+    step: "2",
+    title: "Sprint Design",
+    description: "Conception de la solution avec prototypes et validation utilisateurs.",
+    duration: "2-3 semaines"
+  },
+  {
+    step: "3",
+    title: "Build & Test",
+    description: "Développement agile avec livraisons hebdomadaires et feedback continu.",
+    duration: "6-8 semaines"
+  },
+  {
+    step: "4",
+    title: "Deploy & Scale",
+    description: "Mise en production, formation des équipes et plan de déploiement.",
+    duration: "2-3 semaines"
+  }
+];
+---
+
+<BaseLayout title="Innovation Strike Team pour Entreprises">
+  <Header />
+  
+  <main class="flex-1">
+    <!-- Hero Section -->
+    <section class="pt-24 pb-24 relative overflow-hidden bg-slate-950">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#818CF8]/10 to-transparent"></div>
+      
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="inline-flex items-center px-4 py-2 rounded-full glass-dark mb-8 animate-slide-in border-glow">
+            <span class="w-2 h-2 bg-d11n-accent rounded-full animate-pulse mr-2"></span>
+            <span class="text-sm text-slate-300">INNOVATION STRIKE TEAM</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-display font-bold mb-6 animate-slide-in stagger-1">
+            Pour les <span class="gradient-text-dark">Innovateurs Corporate</span>
+          </h1>
+          <p class="text-xl text-slate-400 leading-relaxed mb-8 animate-slide-in stagger-2">
+            Votre équipe R&D externe et sur-entraînée. Nous livrons des prototypes 
+            fonctionnels et des business units validées par le marché, sans la 
+            bureaucratie et l'inertie de votre organisation.
+          </p>
+          <Button href="/contact" size="lg" variant="secondary">
+            Planifier une démo →
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="py-20 bg-slate-950">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-12 text-center">
+            Les Défis de <span class="gradient-text-dark">l'Innovation Corporate</span>
+          </h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="card-dark p-6 border-slate-600/30">
+              <h3 class="text-xl font-bold text-slate-400 mb-3">Sans D11N</h3>
+              <ul class="space-y-2 text-slate-500">
+                <li class="flex items-start"><Icon name="x" class="text-slate-500 mr-2 flex-shrink-0 mt-0.5" size="sm" /> Process internes lents et complexes</li>
+                <li class="flex items-start"><Icon name="x" class="text-slate-500 mr-2 flex-shrink-0 mt-0.5" size="sm" /> Difficultés à recruter des talents tech</li>
+                <li class="flex items-start"><Icon name="x" class="text-slate-500 mr-2 flex-shrink-0 mt-0.5" size="sm" /> Risque de cannibalisation</li>
+                <li class="flex items-start"><Icon name="x" class="text-slate-500 mr-2 flex-shrink-0 mt-0.5" size="sm" /> Time-to-market de 12-18 mois</li>
+                <li class="flex items-start"><Icon name="x" class="text-slate-500 mr-2 flex-shrink-0 mt-0.5" size="sm" /> Budget difficile à estimer</li>
+              </ul>
+            </div>
+            
+            <div class="card-dark p-6 border-[#818CF8]/30">
+              <h3 class="text-xl font-bold text-[#818CF8] mb-3">Avec D11N</h3>
+              <ul class="space-y-2 text-slate-300">
+                <li class="flex items-start"><Icon name="check" class="text-[#818CF8] mr-2 flex-shrink-0 mt-0.5" size="sm" /> Agilité d'une startup</li>
+                <li class="flex items-start"><Icon name="check" class="text-[#818CF8] mr-2 flex-shrink-0 mt-0.5" size="sm" /> Équipe senior dédiée</li>
+                <li class="flex items-start"><Icon name="check" class="text-[#818CF8] mr-2 flex-shrink-0 mt-0.5" size="sm" /> Innovation isolée et protégée</li>
+                <li class="flex items-start"><Icon name="check" class="text-[#818CF8] mr-2 flex-shrink-0 mt-0.5" size="sm" /> Pilote en 12 semaines</li>
+                <li class="flex items-start"><Icon name="check" class="text-[#818CF8] mr-2 flex-shrink-0 mt-0.5" size="sm" /> Budget fixe et maîtrisé</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-slate-900">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-12 text-center">
+          Les Avantages <span class="gradient-text-dark">D11N</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {benefits.map((benefit) => (
+            <Card title={benefit.title} description={benefit.description} glowEffect={true}>
+              <div class="mb-2 text-[#818CF8]">
+                <Icon name={benefit.icon} size="lg" />
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-20 bg-slate-950">
+      
+      <div class="container mx-auto px-6 relative z-10">
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-12 text-center">
+          Cas d'Usage <span class="gradient-text-dark">Fréquents</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {useCases.map((useCase) => (
+            <div class="card-dark p-6 hover-lift-dark">
+              <h3 class="text-xl font-bold text-white mb-3">{useCase.title}</h3>
+              <p class="text-slate-400 mb-4">{useCase.description}</p>
+              <div class="flex flex-wrap gap-2">
+                {useCase.examples.map((example) => (
+                  <span class="px-3 py-1 bg-[#818CF8]/20 text-[#818CF8] text-sm rounded-full">
+                    {example}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section class="py-20 bg-slate-900">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-12 text-center">
+          Notre Approche en <span class="gradient-text-dark">4 Étapes</span>
+        </h2>
+        
+        <div class="max-w-4xl mx-auto">
+          <div class="space-y-8">
+            {approach.map((phase, index) => (
+              <div class="flex items-start space-x-6">
+                <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-[#818CF8] to-[#A78BFA] rounded-full flex items-center justify-center shadow-glow-dark">
+                  <span class="text-2xl font-bold text-white">{phase.step}</span>
+                </div>
+                <div class="flex-grow">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="text-xl font-bold text-white">{phase.title}</h3>
+                    <span class="text-sm text-[#818CF8] font-semibold">{phase.duration}</span>
+                  </div>
+                  <p class="text-slate-400">{phase.description}</p>
+                  {index < approach.length - 1 && (
+                    <div class="mt-8 border-l-2 border-slate-700 h-8 ml-8"></div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="py-20 bg-slate-950">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-6">
+            Ils nous font <span class="gradient-text-dark">confiance</span>
+          </h2>
+          <p class="text-xl text-slate-400 mb-12">
+            Des ETI aux groupes du CAC40, nous avons accompagné des dizaines 
+            d'entreprises dans leur transformation digitale.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="text-center">
+              <p class="text-4xl font-display font-bold gradient-text-dark mb-2">3</p>
+              <p class="text-slate-500">Entreprises du CAC40</p>
+            </div>
+            <div class="text-center">
+              <p class="text-4xl font-display font-bold gradient-text-dark mb-2">15M€</p>
+              <p class="text-slate-500">Levés par nos spin-offs</p>
+            </div>
+            <div class="text-center">
+              <p class="text-4xl font-display font-bold gradient-text-dark mb-2">70%</p>
+              <p class="text-slate-500">Réduction time-to-market</p>
+            </div>
+          </div>
+          
+          <Button href="/portfolio" variant="outline" size="lg">
+            Voir nos réalisations →
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-slate-900">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-6">
+            Prêt à <span class="gradient-text-dark">innover</span> sans contraintes ?
+          </h2>
+          <p class="text-xl text-slate-400 mb-8">
+            Confiez-nous votre brief. Nous agissons comme une startup commando 
+            pour livrer un pilote fonctionnel et sa stratégie de go-to-market 
+            en un trimestre.
+          </p>
+          
+          <div class="card-dark p-8 border-glow">
+            <p class="text-2xl font-bold text-white mb-4">
+              Première consultation offerte
+            </p>
+            <p class="text-slate-300 mb-6">
+              30 minutes pour comprendre vos défis et vous proposer une approche sur-mesure.
+            </p>
+            <Button href="/contact" size="lg" variant="secondary">
+              Réserver un créneau
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+
+  <Footer />
+</BaseLayout>

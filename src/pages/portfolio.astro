@@ -1,0 +1,212 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CaseStudyCard from '../components/CaseStudyCard.astro';
+import Button from '../components/Button.astro';
+
+const caseStudies = [
+  {
+    title: "AlphaStream",
+    tagline: "Plateforme de streaming pour traders",
+    challenge: "Le monde du trading est saturé de bruit. Le défi n'était pas technique, mais de créer une communauté premium où l'information est si précieuse qu'elle devient un outil de travail indispensable.",
+    approach: [
+      "Scraping de milliers de conversations sur Reddit et Discord",
+      "UI conçue pour une densité d'information maximale",
+      "Approche de 10 traders influents comme ambassadeurs",
+      "Analyse en temps réel des contenus performants"
+    ],
+    results: [
+      "De 0 à 50 000 € de MRR en 6 mois",
+      "Taux de rétention à 3 mois de 85%",
+      "Latence quasi nulle sur les flux"
+    ],
+    status: "Acquis par une grande banque d'investissement",
+    metrics: [
+      { label: "MRR atteint", value: "50k€" },
+      { label: "Rétention", value: "85%" }
+    ]
+  },
+  {
+    title: "QuizSpark",
+    tagline: "Quiz gamifié pour team buildings",
+    challenge: "Créer une expérience si engageante que les employés la réclament, et prouver un ROI tangible aux départements RH.",
+    approach: [
+      "Analyse des mécaniques de jeu mobiles addictives",
+      "Constructeur de quiz ultra-simple avec IA",
+      "Lancement de quiz grand public pour la viralité",
+      "Optimisation des formats via analytics"
+    ],
+    results: [
+      "3 entreprises du CAC40 la première année",
+      "500 000 joueurs uniques en 9 mois",
+      "Leader sur l'edutainment corporate"
+    ],
+    status: "Profitable et en expansion",
+    metrics: [
+      { label: "Joueurs", value: "500k" },
+      { label: "Clients CAC40", value: "3" }
+    ]
+  },
+  {
+    title: "Aegis Monitor",
+    tagline: "Plateforme de veille pour gestion de crise",
+    challenge: "Transformer le chaos informationnel d'une crise en un signal clair et unique pour les décideurs, où chaque seconde compte et la tolérance à l'erreur est de zéro.",
+    approach: [
+      "Intégration de cellules de crise existantes",
+      "War room digital avec cartographie centrale",
+      "IA pour détection d'anomalies et résumés",
+      "Intégration continue de nouvelles sources"
+    ],
+    results: [
+      "Réduction de 70% du temps de qualification",
+      "Contrat-cadre avec agence gouvernementale",
+      "Module de prédiction des signaux faibles"
+    ],
+    status: "Spin-off, a levé 15M€ en Série A",
+    metrics: [
+      { label: "Temps gagné", value: "-70%" },
+      { label: "Levée de fonds", value: "15M€" }
+    ]
+  },
+  {
+    title: "VerityFlow",
+    tagline: "Plateforme de déclaration pour OGC",
+    challenge: "Remplacer des processus archaïques (Excel, papier) sources d'erreurs et de frustration, pour une population d'utilisateurs très hétérogène.",
+    approach: [
+      "ML sur 10 000 déclarations pour identifier les erreurs",
+      "Objectif zéro saisie manuelle avec parsing IA",
+      "Déploiement par vagues avec power users",
+      "Dashboard de suivi et API pour intégrations"
+    ],
+    results: [
+      "Diminution de 85% des erreurs de saisie",
+      "Temps de traitement de 2 jours à 15 minutes",
+      "Standard technologique pour plusieurs OGC"
+    ],
+    status: "Standard européen pour plusieurs OGC",
+    metrics: [
+      { label: "Erreurs", value: "-85%" },
+      { label: "Rapidité", value: "15min" }
+    ]
+  }
+];
+
+const stats = [
+  { value: "25+", label: "Projets accélérés" },
+  { value: "85%", label: "Taux de succès" },
+  { value: "4.2M€", label: "Revenue généré pour nos clients" },
+  { value: "90j", label: "Temps moyen to market" }
+];
+---
+
+<BaseLayout title="Portfolio">
+  <Header />
+  
+  <main class="flex-1">
+    <!-- Hero Section -->
+    <section class="pt-24 pb-24 relative overflow-hidden bg-slate-950">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#818CF8]/10 to-transparent"></div>
+      
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-6xl font-display font-bold mb-6 animate-slide-in">
+            Nos <span class="gradient-text-dark">Réalisations</span>
+          </h1>
+          <p class="text-xl text-slate-400 leading-relaxed animate-slide-in stagger-1">
+            Des idées transformées en business. Des défis corporate résolus en semaines. 
+            Découvrez comment nous avons aidé nos clients à passer de l'idée à la traction.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 relative overflow-hidden bg-slate-950">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#818CF8]/5 via-transparent to-[#A78BFA]/5"></div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map((stat) => (
+            <div class="text-center">
+              <p class="text-3xl md:text-4xl font-display font-bold gradient-text-dark mb-2">{stat.value}</p>
+              <p class="text-slate-500 text-sm">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Studies Grid -->
+    <section class="py-24 bg-slate-900">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {caseStudies.map((study, index) => (
+            <CaseStudyCard {...study} index={index} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Methodology Reminder -->
+    <section class="py-20 relative overflow-hidden bg-slate-950">
+      
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-6">
+            Le Moteur <span class="gradient-text-dark">D11N</span> en Action
+          </h2>
+          <p class="text-xl text-slate-400 mb-12">
+            Chaque projet suit notre méthodologie éprouvée en 4 phases, 
+            garantissant vélocité et résultats mesurables.
+          </p>
+          
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="card-dark p-6">
+              <p class="text-[#818CF8] font-bold mb-2">DECODE</p>
+              <p class="text-sm text-slate-400">Validation marché</p>
+            </div>
+            <div class="card-dark p-6">
+              <p class="text-[#818CF8] font-bold mb-2">DESIGN</p>
+              <p class="text-sm text-slate-400">Marque & produit</p>
+            </div>
+            <div class="card-dark p-6">
+              <p class="text-[#818CF8] font-bold mb-2">DEPLOY</p>
+              <p class="text-sm text-slate-400">Acquisition clients</p>
+            </div>
+            <div class="card-dark p-6">
+              <p class="text-[#818CF8] font-bold mb-2">DRIVE</p>
+              <p class="text-sm text-slate-400">Scale & croissance</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-slate-900">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-6">
+            Votre Projet Sera-t-il le <span class="gradient-text-dark">Prochain</span> ?
+          </h2>
+          <p class="text-xl text-slate-400 mb-8">
+            Que vous soyez une startup ambitieuse ou une entreprise établie, 
+            nous avons la solution pour accélérer votre innovation.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button href="/contact" size="lg">
+              Démarrer un projet
+            </Button>
+            <Button href="/studio" variant="outline" size="lg">
+              Découvrir notre méthode
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+
+  <Footer />
+</BaseLayout>

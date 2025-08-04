@@ -1,0 +1,51 @@
+---
+import Icon from './Icon.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="relative bg-slate-950 border-t border-slate-800">
+  <div class="container mx-auto px-6 pt-24 pb-12 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- About -->
+      <div class="md:col-span-2">
+        <h3 class="text-2xl font-display font-bold gradient-text-dark mb-4">D11N</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">
+          Nous transformons les idées en entreprises validées par le marché. 
+          Un moteur d'accélération propulsé par l'IA et l'automatisation pour une vélocité maximale vers la traction.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-semibold text-white mb-4">Navigation</h4>
+        <ul class="space-y-2">
+          <li><a href="/studio" class="text-slate-400 hover:text-[#818CF8] transition-colors text-sm">Le Studio</a></li>
+          <li><a href="/startups" class="text-slate-400 hover:text-[#818CF8] transition-colors text-sm">Pour les Startups</a></li>
+          <li><a href="/entreprises" class="text-slate-400 hover:text-[#818CF8] transition-colors text-sm">Pour les Entreprises</a></li>
+          <li><a href="/portfolio" class="text-slate-400 hover:text-[#818CF8] transition-colors text-sm">Portfolio</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-semibold text-white mb-4">Contact</h4>
+        <ul class="space-y-2">
+          <li><a href="/contact" class="text-slate-400 hover:text-[#818CF8] transition-colors text-sm">Démarrer un projet</a></li>
+          <li><a href="mailto:hello@d11n.io" class="text-slate-400 hover:text-[#818CF8] transition-colors text-sm">hello@d11n.io</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-slate-800">
+      <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <p class="text-slate-500 text-sm">
+          © {year} D11N. Tous droits réservés.
+        </p>
+        <p class="text-slate-500 text-sm">
+          De l'Idée à la Traction. <span class="text-[#818CF8]">Industrialisé.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

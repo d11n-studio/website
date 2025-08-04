@@ -1,0 +1,60 @@
+/* Custom form styles */
+/* Custom select styling */
+.form-select {
+    @apply w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:border-[#818CF8] focus:outline-none transition-all duration-200;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23818CF8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5em 1.5em;
+    padding-right: 3rem;
+  }
+
+  .form-select:hover {
+    @apply border-slate-600 bg-slate-700/70;
+  }
+
+  .form-select:focus {
+    @apply border-[#818CF8] bg-slate-700 shadow-[0_0_0_3px_rgba(129,140,248,0.1)];
+  }
+
+  /* Custom input styling */
+  .form-input {
+    @apply w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:border-[#818CF8] focus:outline-none transition-all duration-200;
+  }
+
+  .form-input:hover {
+    @apply border-slate-600 bg-slate-700/70;
+  }
+
+  .form-input:focus {
+    @apply border-[#818CF8] bg-slate-700 shadow-[0_0_0_3px_rgba(129,140,248,0.1)];
+  }
+
+  /* Custom textarea styling */
+  .form-textarea {
+    @apply w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:border-[#818CF8] focus:outline-none transition-all duration-200 resize-none;
+  }
+
+  .form-textarea:hover {
+    @apply border-slate-600 bg-slate-700/70;
+  }
+
+  .form-textarea:focus {
+    @apply border-[#818CF8] bg-slate-700 shadow-[0_0_0_3px_rgba(129,140,248,0.1)];
+  }
+
+  /* Form label styling */
+  .form-label {
+    @apply block text-sm font-medium text-slate-300 mb-2;
+  }
+
+  .form-label-required::after {
+    content: ' *';
+    @apply text-[#818CF8];
+  }
+
+  /* Option styling for better contrast */
+  select option {
+    @apply bg-slate-800 text-white;
+  }

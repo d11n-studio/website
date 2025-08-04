@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Card from '../components/Card.astro';
+import Icon from '../components/Icon.astro';
+
+const principles = [
+  {
+    title: "Vélocité Maximale",
+    description: "L'ère des lancements de projets lents est révolue. Nous mesurons notre succès en semaines, pas en années.",
+    icon: "bolt"
+  },
+  {
+    title: "IA-First",
+    description: "L'intelligence artificielle n'est pas un gadget, c'est notre colonne vertébrale. Elle amplifie chaque décision.",
+    icon: "chip"
+  },
+  {
+    title: "Validation Continue",
+    description: "Chaque hypothèse est testée sur le terrain. Le marché décide, pas les opinions.",
+    icon: "check"
+  },
+  {
+    title: "Focus Traction",
+    description: "Un seul objectif : des clients payants. Tout le reste est secondaire.",
+    icon: "chart"
+  }
+];
+
+const tools = [
+  "GPT-4 & Claude pour l'analyse",
+  "Scraping intelligent de données",
+  "Génération de contenu automatisée", 
+  "A/B testing en temps réel",
+  "Analytics prédictifs",
+  "Automatisation des workflows"
+];
+---
+
+<BaseLayout title="Le Studio">
+  <Header />
+  
+  <main class="flex-1">
+    <!-- Hero Section -->
+    <section class="pt-24 pb-24 relative overflow-hidden bg-slate-950">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#818CF8]/10 to-transparent"></div>
+      
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-6xl font-display font-bold mb-6 animate-slide-in">
+            Le Studio <span class="gradient-text-dark">D11N</span>
+          </h1>
+          <p class="text-xl text-slate-400 leading-relaxed animate-slide-in stagger-1">
+            Nous ne sommes pas un incubateur. Nous ne sommes pas une agence. 
+            Nous sommes un <span class="text-[#818CF8] font-semibold">moteur</span> qui transforme les idées 
+            en entreprises validées par le marché.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="py-20 bg-slate-950">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-12 text-center">
+            Notre <span class="gradient-text-dark">Philosophie</span>
+          </h2>
+          
+          <div class="prose prose-invert max-w-none text-slate-300 space-y-6">
+            <p class="text-lg leading-relaxed">
+              <span class="text-2xl font-bold gradient-text-dark">D-11-N : Determination.</span>
+            </p>
+            <p class="text-lg leading-relaxed">
+              Notre nom est notre promesse. Dans un monde saturé de "moi aussi", nous créons des "seulement nous". 
+              Chaque projet qui passe par notre studio doit émerger avec un avantage concurrentiel si clair 
+              et si puissant qu'il en devient une évidence pour ses clients.
+            </p>
+            <p class="text-lg leading-relaxed">
+              Nous industrialisons l'innovation grâce à l'IA, l'automatisation et une obsession pragmatique 
+              pour le besoin client. Le "build it and they will come" est le mantra des cimetières de startups. 
+              Aujourd'hui, la seule chose qui compte est la <span class="text-[#818CF8] font-semibold">vélocité vers la traction</span>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Principles Section -->
+    <section class="py-20 bg-slate-900">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-12 text-center">
+          Nos <span class="gradient-text-dark">Principes</span> Fondateurs
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {principles.map((principle) => (
+            <Card title={principle.title} description={principle.description} glowEffect={true}>
+              <div class="mb-4 text-[#818CF8]">
+                <Icon name={principle.icon} size="xl" />
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="py-20 bg-slate-900">
+      
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-12 text-center">
+            Notre Stack <span class="gradient-text-dark">Technologique</span>
+          </h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {tools.map((tool) => (
+              <div class="flex items-center space-x-3 p-4 card-dark">
+                <Icon name="chevron-right" class="text-[#67E8F9] flex-shrink-0" size="sm" />
+                <span class="text-slate-300">{tool}</span>
+              </div>
+            ))}
+          </div>
+          
+          <div class="mt-12 p-6 card-dark border-glow">
+            <p class="text-center text-lg text-slate-300">
+              <span class="font-bold text-white">Notre avantage :</span> Nous combinons l'expertise humaine 
+              de haut niveau avec la puissance de l'IA pour une exécution 
+              <span class="text-[#818CF8] font-semibold">4x plus rapide</span> que les méthodes traditionnelles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-slate-950">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-6">
+            Prêt à <span class="gradient-text-dark">accélérer</span> ?
+          </h2>
+          <p class="text-xl text-slate-400 mb-8">
+            Découvrez comment notre méthodologie peut transformer votre idée en business.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/startups" class="px-8 py-4 rounded-xl btn-dark-primary text-white font-semibold hover-lift-dark shine-dark">
+              Pour les Startups →
+            </a>
+            <a href="/entreprises" class="px-8 py-4 rounded-xl border-2 border-slate-700 text-slate-300 font-semibold hover:border-[#818CF8] hover:text-[#818CF8] transition-all hover-lift-dark">
+              Pour les Entreprises →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+
+  <Footer />
+</BaseLayout>

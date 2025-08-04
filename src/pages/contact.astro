@@ -1,0 +1,291 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
+import '../styles/form.css';
+
+const projectTypes = [
+  "Nouvelle startup",
+  "Innovation corporate", 
+  "Transformation digitale",
+  "Automatisation IA",
+  "Autre"
+];
+
+const budgetRanges = [
+  "< 50k€",
+  "50k€ - 100k€", 
+  "100k€ - 250k€",
+  "> 250k€"
+];
+
+const timelines = [
+  "ASAP",
+  "< 3 mois",
+  "3-6 mois",
+  "> 6 mois"
+];
+---
+
+<BaseLayout title="Contact">
+  <Header />
+  
+  <main class="flex-1">
+    <!-- Hero Section -->
+    <section class="pt-24 pb-24 relative overflow-hidden bg-slate-950">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#818CF8]/10 to-transparent"></div>
+      
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-6xl font-display font-bold mb-6 animate-slide-in">
+            Passons à <span class="gradient-text-dark">l'Action</span>
+          </h1>
+          <p class="text-xl text-slate-400 leading-relaxed animate-slide-in stagger-1">
+            Vous avez une idée ? Un défi business ? Parlons-en. 
+            Notre équipe analyse chaque projet et revient vers vous sous 48h.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="py-20 bg-slate-900">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto">
+          <form class="space-y-8" id="contact-form">
+            <!-- Contact Info -->
+            <div class="card-dark p-8">
+              <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                <span class="w-8 h-8 bg-gradient-to-br from-[#818CF8] to-[#A78BFA] rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">1</span>
+                Vos Coordonnées
+              </h2>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="form-label form-label-required">
+                    Nom complet
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="form-input"
+                    placeholder="Jean Dupont"
+                  />
+                </div>
+                
+                <div>
+                  <label for="company" class="form-label">
+                    Entreprise
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    class="form-input"
+                    placeholder="Startup Inc."
+                  />
+                </div>
+                
+                <div>
+                  <label for="email" class="form-label form-label-required">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="form-input"
+                    placeholder="jean@exemple.com"
+                  />
+                </div>
+                
+                <div>
+                  <label for="phone" class="form-label">
+                    Téléphone
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="form-input"
+                    placeholder="+33 6 12 34 56 78"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Info -->
+            <div class="card-dark p-8">
+              <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                <span class="w-8 h-8 bg-gradient-to-br from-[#818CF8] to-[#A78BFA] rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">2</span>
+                Votre Projet
+              </h2>
+              
+              <div class="space-y-6">
+                <div>
+                  <label for="project-type" class="form-label form-label-required">
+                    Type de projet
+                  </label>
+                  <select
+                    id="project-type"
+                    name="project-type"
+                    required
+                    class="form-select"
+                  >
+                    <option value="">Sélectionnez un type</option>
+                    {projectTypes.map((type) => (
+                      <option value={type}>{type}</option>
+                    ))}
+                  </select>
+                </div>
+                
+                <div>
+                  <label for="description" class="form-label form-label-required">
+                    Description du projet
+                  </label>
+                  <textarea
+                    id="description"
+                    name="description"
+                    rows="4"
+                    required
+                    class="form-textarea"
+                    placeholder="Décrivez votre projet, vos objectifs et vos défis actuels..."
+                  ></textarea>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label for="budget" class="form-label">
+                      Budget estimé
+                    </label>
+                    <select
+                      id="budget"
+                      name="budget"
+                      class="form-select"
+                    >
+                      <option value="">Non défini</option>
+                      {budgetRanges.map((range) => (
+                        <option value={range}>{range}</option>
+                      ))}
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label for="timeline" class="form-label form-label-required">
+                      Timeline souhaitée
+                    </label>
+                    <select
+                      id="timeline"
+                      name="timeline"
+                      required
+                      class="form-select"
+                    >
+                      <option value="">Sélectionnez</option>
+                      {timelines.map((timeline) => (
+                        <option value={timeline}>{timeline}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="card-dark p-8">
+              <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                <span class="w-8 h-8 bg-gradient-to-br from-[#818CF8] to-[#A78BFA] rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">3</span>
+                Pour Mieux Vous Connaître
+              </h2>
+              
+              <div class="space-y-6">
+                <div>
+                  <label for="challenges" class="form-label">
+                    Principaux défis
+                  </label>
+                  <textarea
+                    id="challenges"
+                    name="challenges"
+                    rows="3"
+                    class="form-textarea"
+                    placeholder="Quels sont vos principaux obstacles actuels ?"
+                  ></textarea>
+                </div>
+                
+                <div>
+                  <label for="how-heard" class="form-label">
+                    Comment avez-vous entendu parler de D11N ?
+                  </label>
+                  <input
+                    type="text"
+                    id="how-heard"
+                    name="how-heard"
+                    class="form-input"
+                    placeholder="Recommandation, recherche Google, etc."
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="text-center">
+              <Button type="submit" size="lg">
+                Envoyer ma demande →
+              </Button>
+              <p class="mt-4 text-sm text-slate-400">
+                Les champs marqués d'un astérisque sont obligatoires. Vos données sont traitées avec la plus stricte confidentialité.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="py-20 bg-slate-950">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-display font-bold text-white mb-12">
+            Autres Moyens de <span class="gradient-text-dark">Nous Contacter</span>
+          </h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="card-dark p-6">
+              <h3 class="text-xl font-semibold text-white mb-2">Email Direct</h3>
+              <a href="mailto:hello@d11n.io" class="text-[#818CF8] hover:underline">
+                hello@d11n.io
+              </a>
+            </div>
+            
+            <div class="card-dark p-6">
+              <h3 class="text-xl font-semibold text-white mb-2">Réponse Garantie</h3>
+              <p class="text-slate-400">
+                Sous 48h ouvrées maximum
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Ici vous pouvez ajouter la logique d'envoi du formulaire
+    // Par exemple avec fetch() vers votre endpoint
+    
+    alert('Merci pour votre message ! Nous reviendrons vers vous sous 48h.');
+    form.reset();
+  });
+</script>

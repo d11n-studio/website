@@ -1,16 +1,220 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
+import Icon from '../components/Icon.astro';
 
+const services = [
+  {
+    title: "DECODE",
+    duration: "1-2 semaines",
+    description: "Validation de l'opportunité de marché via IA et analyse concurrentielle.",
+    features: ["Analyse de marché par IA", "Scraping intelligent", "Définition du MVA", "Traction Report"],
+  },
+  {
+    title: "DESIGN", 
+    duration: "2-3 semaines",
+    description: "Création d'une marque et d'un produit désirables.",
+    features: ["Identité visuelle par IA", "Conception UX/UI", "Architecture no-code", "Messages clés"],
+  },
+  {
+    title: "DEPLOY",
+    duration: "4-8 semaines", 
+    description: "Acquisition des premiers utilisateurs et clients.",
+    features: ["Landing pages optimisées", "Campagnes automatisées", "Contenu par IA", "CRM intégré"],
+  },
+  {
+    title: "DRIVE",
+    duration: "Continu",
+    description: "Itération vers le Product-Market Fit.",
+    features: ["Analytics temps réel", "A/B testing", "Optimisation continue", "Deck investisseurs"],
+  }
+];
+
+const stats = [
+  { value: "90", unit: "jours", label: "De l'idée au MVP" },
+  { value: "85", unit: "%", label: "Taux de validation marché" },
+  { value: "4x", unit: "", label: "Vélocité vs. méthodes traditionnelles" },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Accueil">
+  <Header />
+  
+  <main class="flex-1">
+    <!-- Hero Section -->
+    <section class="relative flex items-center justify-center overflow-hidden bg-slate-950">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#818CF8]/10 to-transparent"></div>
+      
+      <div class="container mx-auto px-6 py-32 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-5xl md:text-7xl font-display font-bold leading-tight mb-6 animate-slide-up">
+            De l'Idée à la <span class="gradient-text-dark">Traction</span>. Industrialisé.
+          </h1>
+          
+          <p class="text-xl text-slate-400 mb-12 max-w-2xl mx-auto animate-slide-in stagger-2">
+            Le startup studio qui utilise l'IA, l'automatisation et l'industrialisation pour construire des entreprises, pas juste des projets.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button href="/contact" size="lg" class="animate-slide-up" style="animation-delay: 0.3s">
+              Démarrer un projet
+            </Button>
+            <Button href="/studio" variant="outline" size="lg" class="animate-slide-up" style="animation-delay: 0.4s">
+              Découvrir notre méthode
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated orbs -->
+      <div class="absolute top-1/4 -left-48 w-96 h-96 bg-gradient-to-br from-[#818CF8]/20 to-transparent rounded-full blur-3xl animate-float-glow"></div>
+      <div class="absolute bottom-1/4 -right-48 w-96 h-96 bg-gradient-to-br from-[#A78BFA]/20 to-transparent rounded-full blur-3xl animate-float-glow" style="animation-delay: 2s;"></div>
+    </section>
+
+
+    <!-- Stats Section -->
+    <section class="py-20 relative overflow-hidden bg-slate-950">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#818CF8]/5 via-transparent to-[#A78BFA]/5"></div>
+
+      <div class="container mx-auto px-6 py-32 relative z-20">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-4 text-white">
+            Notre Impact en <span class="gradient-text-dark">Chiffres</span>
+          </h2>
+          <p class="text-slate-400 text-lg">
+            Des résultats concrets, mesurables et reproductibles
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          {stats.map((stat, index) => (
+            <div class="text-center animate-slide-in" style={`animation-delay: ${index * 0.1}s`}>
+              <div class="text-4xl md:text-5xl font-display font-bold mb-2">
+                <span class="gradient-text-dark">{stat.value}</span>
+                <span class="text-2xl md:text-3xl text-slate-600">{stat.unit}</span>
+              </div>
+              <p class="text-slate-500 text-sm">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="py-24 bg-slate-900">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-5xl font-display font-bold mb-4">
+            Le Moteur <span class="gradient-text-dark">D11N</span>
+          </h2>
+          <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+            Un processus en 4 phases, massivement augmenté par l'IA pour une exécution ultra-rapide.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto">
+          {services.map((service, index) => (
+            <div class="relative">
+              <Card 
+                title={service.title}
+                description={service.description}
+                glowEffect={true}
+                class="h-full"
+              >
+                <div class="text-sm text-[#818CF8] font-semibold mb-4">
+                  {service.duration}
+                </div>
+                <ul class="space-y-2">
+                  {service.features.map((feature) => (
+                    <li class="text-sm text-slate-400 flex items-start">
+                      <Icon name="chevron-right" class="text-[#67E8F9] mr-2 flex-shrink-0 mt-0.5" size="sm" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+              {index < services.length - 1 && (
+                <div class="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 text-[#818CF8] animate-float">
+                  <Icon name="arrow-right" size="md" />
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-slate-950">
+      
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-5xl font-display font-bold mb-6">
+            Prêt à <span class="gradient-text-dark">Accélérer</span> ?
+          </h2>
+          <p class="text-xl text-slate-400 mb-8">
+            Que vous soyez porteur de projet ou entreprise établie, 
+            nous avons la solution pour accélérer votre innovation.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <Card 
+              title="Pour les Startups"
+              description="Transformez votre vision en machine à traction."
+              glowEffect={true}
+              class="text-center"
+            >
+              <div class="mt-4">
+                <Button href="/startups" variant="primary" size="sm" class="inline-flex items-center gap-2">
+                  Launchpad
+                  <Icon name="arrow-right" size="sm" />
+                </Button>
+              </div>
+            </Card>
+            
+            <Card 
+              title="Pour les Entreprises"
+              description="Votre équipe R&D externe et sur-entraînée."
+              glowEffect={true}
+              class="text-center"
+            >
+              <div class="mt-4">
+                <Button href="/entreprises" variant="secondary" size="sm" class="inline-flex items-center gap-2">
+                  Innovation Strike Team
+                  <Icon name="arrow-right" size="sm" />
+                </Button>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  // Intersection Observer for fade-in animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  // Observe all elements with fade-in-on-scroll class
+  document.addEventListener('DOMContentLoaded', () => {
+    const fadeElements = document.querySelectorAll('.fade-in-on-scroll');
+    fadeElements.forEach(el => observer.observe(el));
+  });
+</script>

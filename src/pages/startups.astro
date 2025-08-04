@@ -1,0 +1,280 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
+import Icon from '../components/Icon.astro';
+
+const benefits = [
+  {
+    title: "90 jours pour un MVP",
+    description: "De l'idée à un produit fonctionnel avec ses premiers clients payants."
+  },
+  {
+    title: "Expertise IA intégrée",
+    description: "Bénéficiez des dernières avancées en IA sans avoir à recruter une équipe technique."
+  },
+  {
+    title: "Focus 100% business",
+    description: "Concentrez-vous sur vos clients pendant qu'on s'occupe de la technologie."
+  },
+  {
+    title: "Validation marché",
+    description: "Chaque décision est basée sur des données réelles, pas des intuitions."
+  },
+  {
+    title: "Scale-ready",
+    description: "Architecture et processus conçus pour supporter une croissance rapide."
+  },
+  {
+    title: "Deck investisseurs",
+    description: "Sortez avec tous les éléments pour convaincre des investisseurs."
+  }
+];
+
+const process = [
+  {
+    week: "Semaines 1-2",
+    phase: "DECODE",
+    activities: [
+      "Analyse approfondie du marché",
+      "Identification des concurrents",
+      "Définition du Minimum Viable Audience",
+      "Go/No-Go decision"
+    ]
+  },
+  {
+    week: "Semaines 3-5",
+    phase: "DESIGN",
+    activities: [
+      "Création de l'identité de marque",
+      "Design UX/UI du MVP",
+      "Architecture technique",
+      "Rédaction des messages clés"
+    ]
+  },
+  {
+    week: "Semaines 6-13",
+    phase: "DEPLOY",
+    activities: [
+      "Développement du MVP",
+      "Lancement des campagnes d'acquisition",
+      "Mise en place des analytics",
+      "Premiers tests utilisateurs"
+    ]
+  },
+  {
+    week: "Après 90 jours",
+    phase: "DRIVE",
+    activities: [
+      "Optimisation continue",
+      "Scaling des canaux performants",
+      "Préparation levée de fonds",
+      "Accompagnement stratégique"
+    ]
+  }
+];
+---
+
+<BaseLayout title="Launchpad pour Startups">
+  <Header />
+  
+  <main class="flex-1">
+    <!-- Hero Section -->
+    <section class="pt-24 pb-24 relative overflow-hidden bg-slate-950">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#818CF8]/10 to-transparent"></div>
+      
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="inline-flex items-center px-4 py-2 rounded-full glass-dark mb-8 animate-slide-in border-glow">
+            <span class="w-2 h-2 bg-d11n-success rounded-full animate-pulse mr-2"></span>
+            <span class="text-sm text-slate-300">LAUNCHPAD</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-display font-bold mb-6 animate-slide-in stagger-1">
+            Pour les <span class="gradient-text-dark">Créateurs Visionnaires</span>
+          </h1>
+          <p class="text-xl text-slate-400 leading-relaxed mb-8 animate-slide-in stagger-2">
+            Un sprint intensif de 90 jours pour transformer votre vision en machine à traction. 
+            On s'occupe de la complexité technique et marketing pour que vous puissiez 
+            vous concentrer sur une seule chose : convaincre vos premiers clients.
+          </p>
+          <Button href="/contact" size="lg">
+            Soumettre mon projet →
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="py-20 bg-slate-950">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-12 text-center">
+            Le Mythe des <span class="gradient-text-dark">2 ans et 200k€</span>
+          </h2>
+          
+          <div class="space-y-6">
+            <p class="text-lg text-slate-300 leading-relaxed">
+              On vous a vendu un mensonge. Le mensonge selon lequel une idée doit passer par un parcours du combattant : des mois de planification, un business plan que personne ne lira, une levée de fonds avant même d'avoir un client, un développement technique interminable.
+            </p>
+            
+            <p class="text-xl font-semibold text-white">
+              C'est le meilleur moyen de tuer une bonne idée.
+            </p>
+            
+            <p class="text-lg text-slate-300 leading-relaxed">
+              Chez D11N, nous avons une autre religion : la vélocité vers la traction.
+            </p>
+            
+            <p class="text-lg text-slate-300 leading-relaxed">
+              Notre méthode est conçue pour court-circuiter le superflu. En 90 jours, nous transformons votre vision en une machine de guerre commerciale : un produit, une marque, et des clients. Point.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-slate-900">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-12 text-center">
+          Ce que vous <span class="gradient-text-dark">obtenez</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {benefits.map((benefit) => (
+            <Card 
+              title={benefit.title} 
+              description={benefit.description} 
+              glowEffect={true}
+            />
+          ))}
+    </section>
+
+    <!-- Process Timeline -->
+    <section class="py-20 bg-slate-950">
+      
+      <div class="container mx-auto px-6 relative z-10">
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-12 text-center">
+          Votre Parcours en <span class="gradient-text-dark">90 Jours</span>
+        </h2>
+        
+        <div class="max-w-4xl mx-auto">
+          {process.map((step, index) => (
+            <div class="relative">
+              <div class="flex items-start space-x-4 mb-8">
+                <div class="flex-shrink-0 w-32 text-right">
+                  <p class="text-sm text-[#818CF8] font-semibold">{step.week}</p>
+                </div>
+                <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-[#818CF8] to-[#A78BFA] rounded-full relative shadow-glow-dark">
+                  {index < process.length - 1 && (
+                    <div class="absolute top-8 left-1/2 transform -translate-x-1/2 w-0.5 h-24 bg-slate-700"></div>
+                  )}
+                </div>
+                <div class="flex-grow">
+                  <h3 class="text-xl font-bold text-white mb-2">{step.phase}</h3>
+                  <ul class="space-y-2">
+                    {step.activities.map((activity) => (
+                      <li class="text-slate-400 flex items-start">
+                        <Icon name="chevron-right" class="text-[#67E8F9] mr-2 flex-shrink-0 mt-0.5" size="sm" />
+                        {activity}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Investment Section -->
+    <section class="py-20 bg-slate-900">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-6">
+            L'<span class="gradient-text-dark">Investissement</span>
+          </h2>
+          <p class="text-xl text-slate-400 mb-8">
+            Nous ne prenons pas d'equity. Vous gardez 100% de votre entreprise.
+          </p>
+          
+          <div class="card-dark p-8 border-glow">
+            <p class="text-2xl font-bold text-white mb-4">
+              Un modèle transparent et aligné
+            </p>
+            <p class="text-slate-300 mb-6">
+              Frais fixes + success fee basé sur vos résultats. 
+              On gagne quand vous gagnez.
+            </p>
+            <Button href="/contact" size="lg">
+              Discuter de votre projet
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-slate-950">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-12 text-center">
+            Questions <span class="gradient-text-dark">Fréquentes</span>
+          </h2>
+          
+          <div class="space-y-6">
+            <div class="card-dark p-6 hover-lift-dark">
+              <h3 class="text-xl font-bold text-white mb-2">
+                Qui peut candidater à un sprint de 90 jours ?
+              </h3>
+              <p class="text-slate-400">
+                Notre processus de sélection est radical. Nous ne cherchons pas des "idées". 
+                Nous cherchons des fondateurs obsédés par un problème qu'ils connaissent mieux 
+                que personne. Nous ne regardons pas les diplômes ou les business plans. 
+                Nous évaluons votre expertise du problème et votre rage de le résoudre. 
+                Si vous êtes prêt à être challengé, à exécuter sans relâche et à vous 
+                concentrer uniquement sur la traction, votre candidature nous intéresse.
+              </p>
+            </div>
+            
+            <div class="card-dark p-6 hover-lift-dark">
+              <h3 class="text-xl font-bold text-white mb-2">
+                Et si mon projet n'est pas validé par la phase DECODE ?
+              </h3>
+              <p class="text-slate-400">
+                Ce n'est pas un échec, c'est notre premier livrable de valeur. La phase DECODE 
+                (1-2 semaines) est conçue pour produire une seule chose : un "GO" ou un "NO GO" 
+                basé sur des données, pas des opinions. Un "NO GO" de notre part est la décision 
+                la plus rentable que vous puissiez prendre : elle vous évite de perdre 2 ans et 
+                200k€ à poursuivre une impasse. Nous préférons un "non" brutal et honnête en 
+                2 semaines à un "peut-être" poli qui dure 6 mois. C'est notre engagement.
+              </p>
+            </div>
+            
+            <div class="card-dark p-6 hover-lift-dark">
+              <h3 class="text-xl font-bold text-white mb-2">
+                Les 90 jours sont terminés. Et maintenant ?
+              </h3>
+              <p class="text-slate-400">
+                Les 90 jours ne sont pas la ligne d'arrivée. C'est le lancement du moteur. 
+                Au jour 91, vous n'avez pas un "projet". Vous avez une entité commerciale 
+                avec une marque, un produit, des clients payants et un dashboard de métriques 
+                claires. C'est là que la phase DRIVE commence : itérer, optimiser, scaler. 
+                Selon la stratégie, on ajuste les leviers soit vers la profitabilité, soit 
+                vers une levée de fonds. On ne vous laisse pas avec les clés. On reste à 
+                vos côtés sur le tableau de bord pour analyser la croissance et définir 
+                les prochains sprints. Notre succès est indexé sur le vôtre, sur le long terme.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,29 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  href?: string;
+  class?: string;
+  glowEffect?: boolean;
+}
+
+const { title, description, href, class: className = '', glowEffect = false } = Astro.props;
+
+const Component = href ? 'a' : 'div';
+---
+
+<Component 
+  href={href}
+  class={`
+    card-dark p-6 hover-lift-dark group border-glow
+    ${href ? 'hover:transform hover:scale-[1.02]' : ''}
+    ${glowEffect ? 'shadow-glow-dark' : ''}
+    ${className}
+  `}
+>
+  <div class="relative z-10">
+    <h3 class="text-xl font-bold text-white mb-2">{title}</h3>
+    {description && <p class="text-slate-400 text-sm mb-4">{description}</p>}
+    <slot />
+  </div>
+</Component>
