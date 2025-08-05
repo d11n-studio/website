@@ -65,27 +65,24 @@ const useCases = [
 const approach = [
   {
     step: "1",
-    title: "Brief & Cadrage",
-    description: "Nous analysons votre défi et définissons ensemble les objectifs et KPIs.",
-    duration: "1 semaine"
+    title: "Traction Report",
+    description: "On valide ou on invalide l'opportunité marché. Notre ticket d'entrée pour prouver notre valeur à faible risque.",
+    duration: "2-3 semaines",
+    pricing: "Forfait fixe"
   },
   {
     step: "2",
-    title: "Sprint Design",
-    description: "Conception de la solution avec prototypes et validation utilisateurs.",
-    duration: "2-3 semaines"
+    title: "Sprint MVP & Go-to-Market",
+    description: "On construit la machine : produit, marque, acquisition. On livre une entité qui génère ses premiers revenus.",
+    duration: "90 jours",
+    pricing: "Forfait projet"
   },
   {
     step: "3",
-    title: "Build & Test",
-    description: "Développement agile avec livraisons hebdomadaires et feedback continu.",
-    duration: "6-8 semaines"
-  },
-  {
-    step: "4",
-    title: "Deploy & Scale",
-    description: "Mise en production, formation des équipes et plan de déploiement.",
-    duration: "2-3 semaines"
+    title: "Handover & Scale",
+    description: "On vous transfère les clés et on forme vos équipes, ou on continue d'opérer la machine pour vous.",
+    duration: "Continu",
+    pricing: "Sur-mesure"
   }
 ];
 ---
@@ -105,12 +102,12 @@ const approach = [
             <span class="text-sm text-slate-300">INNOVATION STRIKE TEAM</span>
           </div>
           <h1 class="text-4xl md:text-6xl font-display font-bold mb-6 animate-slide-in stagger-1">
-            Pour les <span class="gradient-text-dark">Innovateurs Corporate</span>
+            <span class="gradient-text-dark">L'innovation sans l'inertie</span>
           </h1>
           <p class="text-xl text-slate-400 leading-relaxed mb-8 animate-slide-in stagger-2">
-            Votre équipe R&D externe et sur-entraînée. Nous livrons des prototypes 
-            fonctionnels et des business units validées par le marché, sans la 
-            bureaucratie et l'inertie de votre organisation.
+            Votre R&D externe. Les résultats en interne. Nous ne sommes pas des consultants 
+            qui livrent des recommandations. Nous livrons des <span class="text-white font-semibold">business units opérationnelles</span> 
+            en 3 mois au lieu de 18.
           </p>
           <Button href="/contact" size="lg" variant="secondary">
             Planifier une démo →
@@ -127,27 +124,42 @@ const approach = [
             Les Défis de <span class="gradient-text-dark">l'Innovation Corporate</span>
           </h2>
           
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="card-dark p-6 border-slate-600/30">
-              <h3 class="text-xl font-bold text-slate-400 mb-3">Sans D11N</h3>
-              <ul class="space-y-2 text-slate-500">
-                <li class="flex items-start"><Icon name="x" class="text-slate-500 mr-2 flex-shrink-0 mt-0.5" size="sm" /> Process internes lents et complexes</li>
-                <li class="flex items-start"><Icon name="x" class="text-slate-500 mr-2 flex-shrink-0 mt-0.5" size="sm" /> Difficultés à recruter des talents tech</li>
-                <li class="flex items-start"><Icon name="x" class="text-slate-500 mr-2 flex-shrink-0 mt-0.5" size="sm" /> Risque de cannibalisation</li>
-                <li class="flex items-start"><Icon name="x" class="text-slate-500 mr-2 flex-shrink-0 mt-0.5" size="sm" /> Time-to-market de 12-18 mois</li>
-                <li class="flex items-start"><Icon name="x" class="text-slate-500 mr-2 flex-shrink-0 mt-0.5" size="sm" /> Budget difficile à estimer</li>
-              </ul>
+          <div class="space-y-8">
+            <div class="text-center mb-8">
+              <p class="text-lg text-slate-300 leading-relaxed">
+                L'innovation en entreprise est un paradoxe. C'est une priorité stratégique, 
+                mais elle est paralysée par la lenteur des process, la politique interne, 
+                la peur du risque et le "théâtre de l'innovation".
+              </p>
+              <p class="text-xl font-semibold text-white mt-4">
+                Nous agissons comme votre équipe commando externe.
+              </p>
             </div>
             
-            <div class="card-dark p-6 border-[#818CF8]/30">
-              <h3 class="text-xl font-bold text-[#818CF8] mb-3">Avec D11N</h3>
-              <ul class="space-y-2 text-slate-300">
-                <li class="flex items-start"><Icon name="check" class="text-[#818CF8] mr-2 flex-shrink-0 mt-0.5" size="sm" /> Agilité d'une startup</li>
-                <li class="flex items-start"><Icon name="check" class="text-[#818CF8] mr-2 flex-shrink-0 mt-0.5" size="sm" /> Équipe senior dédiée</li>
-                <li class="flex items-start"><Icon name="check" class="text-[#818CF8] mr-2 flex-shrink-0 mt-0.5" size="sm" /> Innovation isolée et protégée</li>
-                <li class="flex items-start"><Icon name="check" class="text-[#818CF8] mr-2 flex-shrink-0 mt-0.5" size="sm" /> Pilote en 12 semaines</li>
-                <li class="flex items-start"><Icon name="check" class="text-[#818CF8] mr-2 flex-shrink-0 mt-0.5" size="sm" /> Budget fixe et maîtrisé</li>
-              </ul>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="card-dark p-6 border-[#818CF8]/30 text-center">
+                <h3 class="text-xl font-bold text-[#818CF8] mb-3">Vitesse Radicale</h3>
+                <p class="text-slate-300 text-sm">
+                  On fait en 3 mois ce qui vous prendrait 18 mois. 
+                  Un avantage concurrentiel décisif.
+                </p>
+              </div>
+              
+              <div class="card-dark p-6 border-[#818CF8]/30 text-center">
+                <h3 class="text-xl font-bold text-[#818CF8] mb-3">Dé-risquage Actif</h3>
+                <p class="text-slate-300 text-sm">
+                  Notre processus tue les mauvaises idées vite et à bas coût. 
+                  Une assurance contre les projets zombies.
+                </p>
+              </div>
+              
+              <div class="card-dark p-6 border-[#818CF8]/30 text-center">
+                <h3 class="text-xl font-bold text-[#818CF8] mb-3">Un Actif, pas un Rapport</h3>
+                <p class="text-slate-300 text-sm">
+                  Vous n'avez pas un document de 100 pages. 
+                  Vous avez une marque, un produit, des clients.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -203,7 +215,7 @@ const approach = [
     <section class="py-20 bg-slate-900">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl md:text-4xl font-display font-bold mb-12 text-center">
-          Notre Approche en <span class="gradient-text-dark">4 Étapes</span>
+          Notre Approche en <span class="gradient-text-dark">3 Étapes</span>
         </h2>
         
         <div class="max-w-4xl mx-auto">
@@ -216,7 +228,10 @@ const approach = [
                 <div class="flex-grow">
                   <div class="flex items-center justify-between mb-2">
                     <h3 class="text-xl font-bold text-white">{phase.title}</h3>
-                    <span class="text-sm text-[#818CF8] font-semibold">{phase.duration}</span>
+                    <div class="text-right">
+                      <span class="text-sm text-[#818CF8] font-semibold block">{phase.duration}</span>
+                      <span class="text-xs text-slate-400">{phase.pricing}</span>
+                    </div>
                   </div>
                   <p class="text-slate-400">{phase.description}</p>
                   {index < approach.length - 1 && (

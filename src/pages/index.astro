@@ -6,30 +6,30 @@ import Button from '../components/Button.astro';
 import Card from '../components/Card.astro';
 import Icon from '../components/Icon.astro';
 
-const services = [
+const enginePrinciples = [
   {
-    title: "DECODE",
-    duration: "1-2 semaines",
-    description: "Validation de l'opportunité de marché via IA et analyse concurrentielle.",
-    features: ["Analyse de marché par IA", "Scraping intelligent", "Définition du MVA", "Traction Report"],
+    title: "Vélocité Radicale",
+    icon: "rocket",
+    description: "3 mois au lieu de 2 ans. Nous court-circuitons le superflu.",
+    details: ["Exécution parallèle", "Décisions data-driven", "Processus industrialisé"],
   },
   {
-    title: "DESIGN", 
-    duration: "2-3 semaines",
-    description: "Création d'une marque et d'un produit désirables.",
-    features: ["Identité visuelle par IA", "Conception UX/UI", "Architecture no-code", "Messages clés"],
+    title: "IA Multi-Modèles", 
+    icon: "chip",
+    description: "Claude, GPT, Gemini : nous utilisons toute la puissance disponible.",
+    details: ["Analyse de marché augmentée", "Génération de contenu", "Automatisation intelligente"],
   },
   {
-    title: "DEPLOY",
-    duration: "4-8 semaines", 
-    description: "Acquisition des premiers utilisateurs et clients.",
-    features: ["Landing pages optimisées", "Campagnes automatisées", "Contenu par IA", "CRM intégré"],
+    title: "Traction First",
+    icon: "chart",
+    description: "Nous validons avant de construire. Toujours.",
+    details: ["Tests marché rapides", "Metrics en temps réel", "Pivot data-driven"],
   },
   {
-    title: "DRIVE",
-    duration: "Continu",
-    description: "Itération vers le Product-Market Fit.",
-    features: ["Analytics temps réel", "A/B testing", "Optimisation continue", "Deck investisseurs"],
+    title: "Exécution 360°",
+    icon: "globe",
+    description: "De l'idée au revenue. Nous gérons tout.",
+    details: ["Tech complète", "Marketing & vente", "Opérations & scale"],
   }
 ];
 
@@ -111,84 +111,138 @@ const stats = [
             Le Moteur <span class="gradient-text-dark">D11N</span>
           </h2>
           <p class="text-xl text-slate-400 max-w-2xl mx-auto">
-            Un processus en 4 phases, massivement augmenté par l'IA pour une exécution ultra-rapide.
+            Notre philosophie : utiliser toute la technologie disponible pour construire des entreprises, pas des projets.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto">
-          {services.map((service, index) => (
-            <div class="relative">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          {enginePrinciples.map((principle, index) => (
+            <div class="relative animate-slide-in" style={`animation-delay: ${index * 0.1}s`}>
               <Card 
-                title={service.title}
-                description={service.description}
                 glowEffect={true}
                 class="h-full"
               >
-                <div class="text-sm text-[#818CF8] font-semibold mb-4">
-                  {service.duration}
+                <div class="flex items-center mb-4">
+                  <Icon name={principle.icon} class="text-[#818CF8] mr-3" size="lg" />
+                  <h3 class="text-xl font-bold text-white">{principle.title}</h3>
                 </div>
+                
+                <p class="text-slate-300 mb-4">
+                  {principle.description}
+                </p>
+                
                 <ul class="space-y-2">
-                  {service.features.map((feature) => (
+                  {principle.details.map((detail) => (
                     <li class="text-sm text-slate-400 flex items-start">
-                      <Icon name="chevron-right" class="text-[#67E8F9] mr-2 flex-shrink-0 mt-0.5" size="sm" />
-                      {feature}
+                      <Icon name="check" class="text-[#67E8F9] mr-2 flex-shrink-0 mt-0.5" size="sm" />
+                      {detail}
                     </li>
                   ))}
                 </ul>
               </Card>
-              {index < services.length - 1 && (
-                <div class="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 text-[#818CF8] animate-float">
-                  <Icon name="arrow-right" size="md" />
-                </div>
-              )}
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- Two Approaches Section -->
     <section class="py-24 bg-slate-950">
-      
       <div class="container mx-auto px-6 relative z-10">
-        <div class="max-w-3xl mx-auto text-center">
-          <h2 class="text-3xl md:text-5xl font-display font-bold mb-6">
-            Prêt à <span class="gradient-text-dark">Accélérer</span> ?
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-5xl font-display font-bold mb-4">
+            Deux Approches. <span class="gradient-text-dark">Une Obsession</span>.
+          </h2>
+          <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+            Nous adaptons notre méthodologie à votre contexte. Startup ou entreprise, l'objectif reste le même : la traction.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <!-- Launchpad -->
+          <div class="card-dark p-8 hover-lift-dark">
+            <div class="mb-6">
+              <Icon name="rocket" class="text-[#818CF8] mb-4" size="xl" />
+              <h3 class="text-2xl font-bold text-white mb-2">Launchpad</h3>
+              <p class="text-[#67E8F9] font-semibold">Pour les Startups</p>
+            </div>
+            
+            <p class="text-slate-300 mb-6">
+              <span class="font-semibold text-white">Le Cheval de Troie.</span> Nous infiltrons votre marché avec un outil gratuit irrésistible avant de déployer votre offre complète.
+            </p>
+            
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center">
+                <Icon name="chevron-right" class="text-[#67E8F9] mr-2" size="sm" />
+                <span class="text-sm text-slate-400">DECODE : Trouver le bon Cheval</span>
+              </div>
+              <div class="flex items-center">
+                <Icon name="chevron-right" class="text-[#67E8F9] mr-2" size="sm" />
+                <span class="text-sm text-slate-400">DESIGN : Forger l'outil parfait</span>
+              </div>
+              <div class="flex items-center">
+                <Icon name="chevron-right" class="text-[#67E8F9] mr-2" size="sm" />
+                <span class="text-sm text-slate-400">DEPLOY : Campagne de guérilla</span>
+              </div>
+              <div class="flex items-center">
+                <Icon name="chevron-right" class="text-[#67E8F9] mr-2" size="sm" />
+                <span class="text-sm text-slate-400">DRIVE : Convertir en clients</span>
+              </div>
+            </div>
+            
+            <a href="/startups" class="inline-flex items-center text-[#818CF8] hover:text-[#A78BFA] transition-colors">
+              Découvrir le Launchpad <Icon name="arrow-right" class="ml-2" size="sm" />
+            </a>
+          </div>
+
+          <!-- Innovation Strike Team -->
+          <div class="card-dark p-8 hover-lift-dark">
+            <div class="mb-6">
+              <Icon name="lightning-bolt" class="text-[#818CF8] mb-4" size="xl" />
+              <h3 class="text-2xl font-bold text-white mb-2">Innovation Strike Team</h3>
+              <p class="text-[#67E8F9] font-semibold">Pour les Entreprises</p>
+            </div>
+            
+            <p class="text-slate-300 mb-6">
+              <span class="font-semibold text-white">Le Commando.</span> Nous livrons des business units opérationnelles en 3 mois, pas des PowerPoints.
+            </p>
+            
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center">
+                <Icon name="chevron-right" class="text-[#67E8F9] mr-2" size="sm" />
+                <span class="text-sm text-slate-400">Traction Report (2-3 semaines)</span>
+              </div>
+              <div class="flex items-center">
+                <Icon name="chevron-right" class="text-[#67E8F9] mr-2" size="sm" />
+                <span class="text-sm text-slate-400">Sprint MVP (90 jours)</span>
+              </div>
+              <div class="flex items-center">
+                <Icon name="chevron-right" class="text-[#67E8F9] mr-2" size="sm" />
+                <span class="text-sm text-slate-400">Handover & Scale</span>
+              </div>
+            </div>
+            
+            <a href="/entreprises" class="inline-flex items-center text-[#818CF8] hover:text-[#A78BFA] transition-colors">
+              Découvrir Strike Team <Icon name="arrow-right" class="ml-2" size="sm" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Simple CTA Section -->
+    <section class="py-20 bg-slate-900">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-6">
+            Prêt à Démarrer ?
           </h2>
           <p class="text-xl text-slate-400 mb-8">
-            Que vous soyez porteur de projet ou entreprise établie, 
-            nous avons la solution pour accélérer votre innovation.
+            4 questions. 48h de réponse. Zéro blabla.
           </p>
-          
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            <Card 
-              title="Pour les Startups"
-              description="Transformez votre vision en machine à traction."
-              glowEffect={true}
-              class="text-center"
-            >
-              <div class="mt-4">
-                <Button href="/startups" variant="primary" size="sm" class="inline-flex items-center gap-2">
-                  Launchpad
-                  <Icon name="arrow-right" size="sm" />
-                </Button>
-              </div>
-            </Card>
-            
-            <Card 
-              title="Pour les Entreprises"
-              description="Votre équipe R&D externe et sur-entraînée."
-              glowEffect={true}
-              class="text-center"
-            >
-              <div class="mt-4">
-                <Button href="/entreprises" variant="secondary" size="sm" class="inline-flex items-center gap-2">
-                  Innovation Strike Team
-                  <Icon name="arrow-right" size="sm" />
-                </Button>
-              </div>
-            </Card>
-          </div>
+          <Button href="/contact" size="lg" class="animate-pulse-subtle">
+            Démarrer la conversation →
+          </Button>
         </div>
       </div>
     </section>
