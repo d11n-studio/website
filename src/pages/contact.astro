@@ -36,7 +36,18 @@ const projectTypes = [
     <section class="py-20 bg-slate-900">
       <div class="container mx-auto px-6">
         <div class="max-w-2xl mx-auto">
-          <form class="space-y-8" id="contact-form">
+          <form 
+            action="https://formsubmit.co/457cd5876a38cb9a5b9f873f988335a9" 
+            method="POST"
+            class="space-y-8" 
+            id="contact-form"
+          >
+            <!-- FormSubmit.co Configuration -->
+            <input type="hidden" name="_subject" value="Nouveau contact D11N - Site Web">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://d11n.studio/contact?success=true">
+            <input type="hidden" name="_template" value="table">
+            
             <!-- Simplified Form -->
             <div class="card-dark p-8">
               <div class="space-y-6">
@@ -74,7 +85,7 @@ const projectTypes = [
                   </label>
                   <select
                     id="project-type"
-                    name="project-type"
+                    name="Type de projet"
                     required
                     class="form-select"
                   >
@@ -86,12 +97,12 @@ const projectTypes = [
                 </div>
                 
                 <div>
-                  <label for="description" class="form-label form-label-required">
+                  <label for="message" class="form-label form-label-required">
                     Votre défi en quelques mots
                   </label>
                   <textarea
-                    id="description"
-                    name="description"
+                    id="message"
+                    name="message"
                     rows="5"
                     required
                     class="form-textarea"
@@ -103,9 +114,9 @@ const projectTypes = [
 
             <!-- Submit -->
             <div class="text-center">
-              <Button type="submit" size="lg">
+              <button type="submit" class="px-8 py-4 rounded-xl btn-dark-primary text-white font-semibold hover-lift-dark shine-dark text-lg">
                 Démarrer la conversation →
-              </Button>
+              </button>
               <p class="mt-4 text-sm text-slate-400">
                 Réponse garantie sous 48h. Zéro spam. Que du concret.
               </p>
@@ -126,8 +137,8 @@ const projectTypes = [
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="card-dark p-6">
               <h3 class="text-xl font-semibold text-white mb-2">Email Direct</h3>
-              <a href="mailto:hello@d11n.io" class="text-[#818CF8] hover:underline">
-                hello@d11n.io
+              <a href="mailto:hello@d11n.studio" class="text-[#818CF8] hover:underline">
+                hello@d11n.studio
               </a>
             </div>
             
@@ -148,15 +159,35 @@ const projectTypes = [
 </BaseLayout>
 
 <script>
-  const form = document.getElementById('contact-form') as HTMLFormElement;
+  // Check for success parameter in URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const success = urlParams.get('success');
   
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
+  if (success === 'true') {
+    // Create success message
+    const successMessage = document.createElement('div');
+    successMessage.className = 'fixed top-4 right-4 bg-gradient-to-r from-[#34D399] to-[#10B981] text-white px-6 py-4 rounded-lg shadow-lg z-50 animate-slide-in';
+    successMessage.innerHTML = `
+      <div class="flex items-center gap-3">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+        <div>
+          <p class="font-semibold">Message envoyé avec succès !</p>
+          <p class="text-sm opacity-90">Nous vous répondrons sous 48h.</p>
+        </div>
+      </div>
+    `;
     
-    // Ici vous pouvez ajouter la logique d'envoi du formulaire
-    // Par exemple avec fetch() vers votre endpoint
+    document.body.appendChild(successMessage);
     
-    alert('Merci pour votre message ! Nous reviendrons vers vous sous 48h.');
-    form.reset();
-  });
+    // Remove success parameter from URL
+    window.history.replaceState({}, document.title, window.location.pathname);
+    
+    // Remove message after 5 seconds
+    setTimeout(() => {
+      successMessage.classList.add('animate-fade-out');
+      setTimeout(() => successMessage.remove(), 500);
+    }, 5000);
+  }
 </script>
