@@ -38,7 +38,7 @@ const colorClass = colors[index % colors.length];
 
   <div class="space-y-6">
     <div>
-      <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">Le Défi</h4>
+      <h4 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-2">Le Défi</h4>
       <p class="text-slate-300">{challenge}</p>
     </div>
 
@@ -47,14 +47,14 @@ const colorClass = colors[index % colors.length];
         {metrics.map((metric) => (
           <div class="text-center bg-slate-900/50 rounded-lg p-3">
             <p class="text-2xl font-bold gradient-text-dark">{metric.value}</p>
-            <p class="text-xs text-slate-500">{metric.label}</p>
+            <p class="text-xs text-slate-400">{metric.label}</p>
           </div>
         ))}
       </div>
     )}
 
     <div>
-      <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">Résultats</h4>
+      <h4 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-2">Résultats</h4>
       <ul class="space-y-1">
         {results.map((result) => (
           <li class="text-sm text-slate-300 flex items-start">
@@ -67,7 +67,7 @@ const colorClass = colors[index % colors.length];
 
     <div class="pt-4 border-t border-slate-800">
       <p class="text-sm">
-        <span class="text-slate-500">Statut :</span>
+        <span class="text-slate-400">Statut :</span>
         <span class="text-white font-semibold ml-2">{status}</span>
       </p>
     </div>

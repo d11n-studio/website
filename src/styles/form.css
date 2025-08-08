@@ -58,3 +58,24 @@
   select option {
     @apply bg-slate-800 text-white;
   }
+
+  /* Error message styling */
+  .error-message {
+    @apply text-red-400 text-sm mt-1 px-1;
+  }
+
+  .error-message.hidden {
+    display: none;
+  }
+
+  /* Invalid field styling */
+  .form-input.invalid,
+  .form-select.invalid,
+  .form-textarea.invalid {
+    @apply border-red-500 bg-red-900/20;
+  }
+
+  /* Loading button state */
+  .btn-loading {
+    @apply opacity-75 cursor-not-allowed;
+  }

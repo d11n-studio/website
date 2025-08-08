@@ -3,9 +3,11 @@ export interface Props {
   name: 'bolt' | 'chip' | 'check' | 'chart' | 'rocket' | 'clock' | 'shield' | 'academic-cap' | 'arrow-right' | 'chevron-right' | 'sparkles' | 'beaker' | 'globe' | 'code' | 'lightning-bolt' | 'cube' | 'cog' | 'users' | 'building-office' | 'phone' | 'mail' | 'menu' | 'x' | 'external-link';
   class?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
+  ariaLabel?: string;
+  decorative?: boolean;
 }
 
-const { name, class: className = '', size = 'md' } = Astro.props;
+const { name, class: className = '', size = 'md', ariaLabel, decorative = false } = Astro.props;
 
 const sizeClasses = {
   sm: 'w-4 h-4',
@@ -49,6 +51,9 @@ const icons = {
   stroke-width="1.5" 
   stroke="currentColor" 
   class={`${sizeClasses[size]} ${className}`}
+  aria-label={decorative ? undefined : ariaLabel}
+  aria-hidden={decorative ? 'true' : 'false'}
+  role={decorative ? 'presentation' : 'img'}
 >
   <Fragment set:html={icons[name]} />
 </svg>

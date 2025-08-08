@@ -106,7 +106,7 @@ const stats = [
 <BaseLayout title="Portfolio">
   <Header />
   
-  <main class="flex-1">
+  <main class="flex-1" id="main-content" tabindex="-1">
     <!-- Hero Section -->
     <section class="pt-24 pb-24 relative overflow-hidden bg-slate-950">
       <div class="absolute inset-0 bg-gradient-to-b from-[#818CF8]/10 to-transparent"></div>
@@ -132,7 +132,7 @@ const stats = [
           {stats.map((stat) => (
             <div class="text-center">
               <p class="text-3xl md:text-4xl font-display font-bold gradient-text-dark mb-2">{stat.value}</p>
-              <p class="text-slate-500 text-sm">{stat.label}</p>
+              <p class="text-slate-400 text-sm">{stat.label}</p>
             </div>
           ))}
         </div>

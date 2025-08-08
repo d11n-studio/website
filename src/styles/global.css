@@ -70,6 +70,11 @@
       inset 0 1px 0 rgba(148, 163, 184, 0.1);
   }
 
+  /* Improved text contrast on cards */
+  .card-dark .text-slate-400 {
+    @apply text-slate-300; /* Better contrast than slate-400 */
+  }
+
   /* Dark glassmorphism */
   .glass-dark {
     @apply backdrop-blur-xl bg-slate-900/60 border border-slate-800/50;
@@ -137,6 +142,39 @@
 }
 
 @layer utilities {
+  /* Focus indicators for accessibility */
+  *:focus {
+    @apply outline-2 outline-offset-2 outline-[#818CF8];
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .skip-link {
+    @apply absolute left-4 top-4 z-50 bg-slate-900 text-white px-4 py-2 rounded-md border-2 border-[#818CF8] transform -translate-y-full opacity-0 transition-all duration-200;
+  }
+
+  .skip-link:focus {
+    @apply transform translate-y-0 opacity-100;
+  }
+
+  /* Enhanced focus styles for interactive elements */
+  button:focus,
+  a:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    @apply outline-2 outline-offset-2 outline-[#818CF8] ring-2 ring-[#818CF8]/50;
+  }
   /* Dark text gradient */
   .text-gradient-dark {
     @apply bg-gradient-to-r from-[#818CF8] to-[#A78BFA] bg-clip-text text-transparent;

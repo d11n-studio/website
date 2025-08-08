@@ -13,6 +13,7 @@ const navItems = [
 ];
 ---
 
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
 <header class="fixed top-0 left-0 right-0 z-50 glass-dark border-b border-slate-800/50 noise-dark">
   <nav class="container mx-auto px-6 py-4">
     <div class="flex items-center justify-between">
@@ -33,8 +34,14 @@ const navItems = [
         ))}
       </ul>
 
-      <button class="md:hidden text-slate-400 hover:text-white transition-colors" id="mobile-menu-toggle">
-        <Icon name="menu" />
+      <button 
+        class="md:hidden text-slate-400 hover:text-white transition-colors" 
+        id="mobile-menu-toggle"
+        aria-label="Ouvrir le menu de navigation"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <Icon name="menu" ariaLabel="Menu de navigation" />
       </button>
     </div>
 
@@ -63,6 +70,9 @@ const navItems = [
   const menu = document.getElementById('mobile-menu');
   
   toggle?.addEventListener('click', () => {
+    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', (!isExpanded).toString());
+    toggle.setAttribute('aria-label', isExpanded ? 'Ouvrir le menu de navigation' : 'Fermer le menu de navigation');
     menu?.classList.toggle('hidden');
   });
 </script>

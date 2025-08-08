@@ -43,7 +43,7 @@ const stats = [
 <BaseLayout title="Accueil">
   <Header />
   
-  <main class="flex-1">
+  <main class="flex-1" id="main-content" tabindex="-1">
     <!-- Hero Section -->
     <section class="relative flex items-center justify-center overflow-hidden bg-slate-950">
       <div class="absolute inset-0 bg-gradient-to-b from-[#818CF8]/10 to-transparent"></div>
@@ -94,9 +94,9 @@ const stats = [
             <div class="text-center animate-slide-in" style={`animation-delay: ${index * 0.1}s`}>
               <div class="text-4xl md:text-5xl font-display font-bold mb-2">
                 <span class="gradient-text-dark">{stat.value}</span>
-                <span class="text-2xl md:text-3xl text-slate-600">{stat.unit}</span>
+                <span class="text-2xl md:text-3xl text-slate-400">{stat.unit}</span>
               </div>
-              <p class="text-slate-500 text-sm">{stat.label}</p>
+              <p class="text-slate-400 text-sm">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -123,7 +123,7 @@ const stats = [
                 class="h-full"
               >
                 <div class="flex items-center mb-4">
-                  <Icon name={principle.icon} class="text-[#818CF8] mr-3" size="lg" />
+                  <Icon name={principle.icon} class="text-[#818CF8] mr-3" size="lg" decorative={true} />
                   <h3 class="text-xl font-bold text-white">{principle.title}</h3>
                 </div>
                 
@@ -134,7 +134,7 @@ const stats = [
                 <ul class="space-y-2">
                   {principle.details.map((detail) => (
                     <li class="text-sm text-slate-400 flex items-start">
-                      <Icon name="check" class="text-[#67E8F9] mr-2 flex-shrink-0 mt-0.5" size="sm" />
+                      <Icon name="check" class="text-[#67E8F9] mr-2 flex-shrink-0 mt-0.5" size="sm" ariaLabel="Inclus" />
                       {detail}
                     </li>
                   ))}
@@ -162,7 +162,7 @@ const stats = [
           <!-- Launchpad -->
           <div class="card-dark p-8 hover-lift-dark">
             <div class="mb-6">
-              <Icon name="rocket" class="text-[#818CF8] mb-4" size="xl" />
+              <Icon name="rocket" class="text-[#818CF8] mb-4" size="xl" decorative={true} />
               <h3 class="text-2xl font-bold text-white mb-2">Launchpad</h3>
               <p class="text-[#67E8F9] font-semibold">Pour les Startups</p>
             </div>
@@ -173,7 +173,7 @@ const stats = [
             
             <div class="space-y-3 mb-6">
               <div class="flex items-center">
-                <Icon name="chevron-right" class="text-[#67E8F9] mr-2" size="sm" />
+                <Icon name="chevron-right" class="text-[#67E8F9] mr-2" size="sm" ariaLabel="Étape" />
                 <span class="text-sm text-slate-400">DECODE : Trouver le bon Cheval</span>
               </div>
               <div class="flex items-center">
@@ -191,14 +191,14 @@ const stats = [
             </div>
             
             <a href="/startups" class="inline-flex items-center text-[#818CF8] hover:text-[#A78BFA] transition-colors">
-              Découvrir le Launchpad <Icon name="arrow-right" class="ml-2" size="sm" />
+              Découvrir le Launchpad <Icon name="arrow-right" class="ml-2" size="sm" ariaLabel="Lien externe" />
             </a>
           </div>
 
           <!-- Innovation Strike Team -->
           <div class="card-dark p-8 hover-lift-dark">
             <div class="mb-6">
-              <Icon name="lightning-bolt" class="text-[#818CF8] mb-4" size="xl" />
+              <Icon name="lightning-bolt" class="text-[#818CF8] mb-4" size="xl" decorative={true} />
               <h3 class="text-2xl font-bold text-white mb-2">Innovation Strike Team</h3>
               <p class="text-[#67E8F9] font-semibold">Pour les Entreprises</p>
             </div>
@@ -223,7 +223,7 @@ const stats = [
             </div>
             
             <a href="/entreprises" class="inline-flex items-center text-[#818CF8] hover:text-[#A78BFA] transition-colors">
-              Découvrir Strike Team <Icon name="arrow-right" class="ml-2" size="sm" />
+              Découvrir Strike Team <Icon name="arrow-right" class="ml-2" size="sm" ariaLabel="Lien externe" />
             </a>
           </div>
         </div>
